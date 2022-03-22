@@ -27,10 +27,6 @@ public class test {
         out.println(response.body());
     }
 
-    public static int sum(int a, int b) {
-        return a + b;
-    }
-
     public static void fileOp() throws IOException {
         for (File file : File.listRoots()) {
             out.println(file);
@@ -82,6 +78,10 @@ public class test {
         AAA aaa = new AAA();
         aaa.c = 10;
         out.println(aaa.su());
+    }
+
+    public static int sum(int a, int b) {
+        return a + b;
     }
 
 }
