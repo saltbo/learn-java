@@ -1,3 +1,5 @@
+import org.apache.commons.codec.digest.DigestUtils;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -8,6 +10,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.Date;
 
 import static java.lang.System.out;
@@ -15,9 +18,16 @@ import static java.lang.System.out;
 public class test {
 
     public static void main(String[] args) throws IOException, InterruptedException {
+//        bytes to string
+//        base64encode
+        out.println(new String(Base64.getEncoder().encode("aaa".getBytes())));
+//        string to bytes
+        out.println(Arrays.toString("111".getBytes()));
+
+        out.println(DigestUtils.md5Hex("aaa"));
 //        basic();
 //        fileOp();
-        httpOp();
+//        httpOp();
     }
 
     private static void httpOp() throws IOException, InterruptedException {
