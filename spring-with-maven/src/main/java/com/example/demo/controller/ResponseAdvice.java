@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 import java.util.Map;
+import java.util.Objects;
 
 @RestControllerAdvice
 class ResponseAdvice implements ResponseBodyAdvice<Object> {
@@ -22,7 +23,11 @@ class ResponseAdvice implements ResponseBodyAdvice<Object> {
 
     @Override
     public Object beforeBodyWrite(Object body, MethodParameter methodParameter, MediaType mediaType, Class<? extends HttpMessageConverter<?>> aClass, ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse) {
-        if (methodParameter.getMethod().getName() == "errorHandler") {
+        if (Objects.requireNonNull(methodParameter.getMethod()).getName().equals("errorHandler")) {
+            return body;
+        }
+
+        if (!serverHttpRequest.getURI().getPath().startsWith("/api")) {
             return body;
         }
 

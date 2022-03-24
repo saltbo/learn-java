@@ -1,8 +1,10 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/demo-jpa
+#    url: jdbc:mysql://localhost:3306/demo-jpa
+    url: jdbc:hsqldb:mem:localhost/demo-jpa
     username: root
     password: admin
+#    driver-class-name: org.hsqldb.jdbc.JDBCDriver
 
   jpa:
     hibernate:
