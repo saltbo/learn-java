@@ -15,19 +15,33 @@ import java.util.Date;
 
 import static java.lang.System.out;
 
-public class test {
+enum LE {
+    A,
+    B,
+    C,
+}
+
+public class main {
+
+    static void learnEnum() {
+        LE a = LE.A;
+        LE b = LE.C;
+    }
+
+    static void learnBase64() {
+        // base64encode
+        out.println(new String(Base64.getEncoder().encode("aaa".getBytes())));
+        // string to bytes
+        out.println(Arrays.toString("111".getBytes()));
+        out.println(DigestUtils.md5Hex("aaa"));
+    }
 
     public static void main(String[] args) throws IOException, InterruptedException {
-//        bytes to string
-//        base64encode
-        out.println(new String(Base64.getEncoder().encode("aaa".getBytes())));
-//        string to bytes
-        out.println(Arrays.toString("111".getBytes()));
-
-        out.println(DigestUtils.md5Hex("aaa"));
-//        basic();
-//        fileOp();
-//        httpOp();
+        learnEnum();
+        learnBase64();
+        basic();
+        fileOp();
+        httpOp();
     }
 
     private static void httpOp() throws IOException, InterruptedException {
