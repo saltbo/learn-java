@@ -5,11 +5,6 @@ spring:
     username: root
     password: admin
 #    driver-class-name: org.hsqldb.jdbc.JDBCDriver
-#  data:
-#    rest:
-#      defaultMediaType: application/json
-#  hateoas:
-#    use-hal-as-default-json-media-type: false
   jpa:
     hibernate:
       ddl-auto: update
